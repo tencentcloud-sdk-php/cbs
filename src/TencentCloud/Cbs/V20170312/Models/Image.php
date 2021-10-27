@@ -20,26 +20,26 @@ use TencentCloud\Common\AbstractModel;
 /**
  * 镜像。
  *
- * @method string getImageId() 获取镜像实例ID。
- * @method void setImageId(string $ImageId) 设置镜像实例ID。
  * @method string getImageName() 获取镜像名称。
  * @method void setImageName(string $ImageName) 设置镜像名称。
+ * @method string getImageId() 获取镜像实例ID。
+ * @method void setImageId(string $ImageId) 设置镜像实例ID。
  */
 class Image extends AbstractModel
 {
-    /**
-     * @var string 镜像实例ID。
-     */
-    public $ImageId;
-
     /**
      * @var string 镜像名称。
      */
     public $ImageName;
 
     /**
-     * @param string $ImageId 镜像实例ID。
+     * @var string 镜像实例ID。
+     */
+    public $ImageId;
+
+    /**
      * @param string $ImageName 镜像名称。
+     * @param string $ImageId 镜像实例ID。
      */
     function __construct()
     {
@@ -54,12 +54,12 @@ class Image extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("ImageId",$param) and $param["ImageId"] !== null) {
-            $this->ImageId = $param["ImageId"];
-        }
-
         if (array_key_exists("ImageName",$param) and $param["ImageName"] !== null) {
             $this->ImageName = $param["ImageName"];
+        }
+
+        if (array_key_exists("ImageId",$param) and $param["ImageId"] !== null) {
+            $this->ImageId = $param["ImageId"];
         }
     }
 }
