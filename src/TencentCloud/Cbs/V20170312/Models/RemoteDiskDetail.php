@@ -18,20 +18,20 @@ namespace TencentCloud\Cbs\V20170312\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeDedicatedClusterDiskStatistics请求参数结构体
+ * 单副本SSD硬盘详情。
  *
- * @method string getDedicatedClusterId() 获取<p>云服务器独享集群ID。</p>
- * @method void setDedicatedClusterId(string $DedicatedClusterId) 设置<p>云服务器独享集群ID。</p>
+ * @method Placement getPlacement() 获取<p>单副本SSD硬盘所在的位置。</p>
+ * @method void setPlacement(Placement $Placement) 设置<p>单副本SSD硬盘所在的位置。</p>
  */
-class DescribeDedicatedClusterDiskStatisticsRequest extends AbstractModel
+class RemoteDiskDetail extends AbstractModel
 {
     /**
-     * @var string <p>云服务器独享集群ID。</p>
+     * @var Placement <p>单副本SSD硬盘所在的位置。</p>
      */
-    public $DedicatedClusterId;
+    public $Placement;
 
     /**
-     * @param string $DedicatedClusterId <p>云服务器独享集群ID。</p>
+     * @param Placement $Placement <p>单副本SSD硬盘所在的位置。</p>
      */
     function __construct()
     {
@@ -46,8 +46,9 @@ class DescribeDedicatedClusterDiskStatisticsRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("DedicatedClusterId",$param) and $param["DedicatedClusterId"] !== null) {
-            $this->DedicatedClusterId = $param["DedicatedClusterId"];
+        if (array_key_exists("Placement",$param) and $param["Placement"] !== null) {
+            $this->Placement = new Placement();
+            $this->Placement->deserialize($param["Placement"]);
         }
     }
 }
